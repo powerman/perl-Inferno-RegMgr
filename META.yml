@@ -1,0 +1,26 @@
+---
+abstract: 'Keep connection to OS Inferno''s registry(4) and it tasks'
+author:
+  - 'Alex Efros <powerman-asdf@ya.ru>'
+build_requires:
+  Test::Exception: 0
+  Test::More: 0
+distribution_type: module
+generated_by: 'Module::Install version 0.77'
+license: perl
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Inferno-RegMgr
+no_index:
+  directory:
+    - inc
+    - t
+requires:
+  EV: 0
+  IO::Stream: 0
+  Perl6::Export::Attrs: 0
+  version: 0
+resources:
+  license: http://dev.perl.org/licenses/
+version: 0.001001

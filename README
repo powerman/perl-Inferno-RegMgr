@@ -1,0 +1,33 @@
+Inferno::RegMgr version 0.1.1
+
+Using OS Inferno registry(4) is simple, but in case connection to registry
+become broken (because of network issues or even registry restart) you
+have to manually reconnect to registry and restore state (register your
+services once again, find out changes in services you're using now, etc.).
+Inferno::RegMgr will do this work for you automatically.
+
+
+INSTALLATION
+
+To install this module, run the following commands:
+
+	perl Makefile.PL
+	make
+	make test
+	make install
+
+
+DEPENDENCIES
+
+version
+Perl6::Export::Attrs
+EV
+IO::Stream
+
+
+COPYRIGHT AND LICENCE
+
+Copyright (C) 2009, Alex Efros
+
+This library is free software; you can redistribute it and/or modify
+it under the same terms as Perl itself.
