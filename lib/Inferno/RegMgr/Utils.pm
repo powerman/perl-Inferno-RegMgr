@@ -4,7 +4,7 @@ use warnings;
 use strict;
 use Carp;
 
-use version; our $VERSION = qv('0.1.0');    # update POD & Changes & README
+use version; our $VERSION = qv('0.1.2');    # update POD & Changes & README
 
 # update DEPENDENCIES in POD & Makefile.PL & README
 use Perl6::Export::Attrs;
@@ -40,7 +40,7 @@ my $qword = qr{( [^'\s]+ | '[^']*(?:''[^']*)*' )}xms;
 sub parse_svc :Export {
     my ($s) = @_;
     return ({}, undef) if $s eq q{};
-    return (undef, "no \\n at end") if $s !~ /\n\z/xms;
+    return (undef, 'no \\n at end') if $s !~ /\n\z/xms;
     my %svc;
     for my $line (split /\n/xms, $s) {
         my $errmsg = "can't parse service: $line";
@@ -91,7 +91,7 @@ Inferno::RegMgr::Utils - Internal module for use by other Inferno::RegMgr::*
 
 =head1 VERSION
 
-This document describes Inferno::RegMgr::Utils version 0.1.0
+This document describes Inferno::RegMgr::Utils version 0.1.2
 
 
 =head1 SYNOPSIS

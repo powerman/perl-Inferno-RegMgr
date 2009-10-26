@@ -4,7 +4,7 @@ use warnings;
 use strict;
 use Carp;
 
-use version; our $VERSION = qv('0.1.0');    # update POD & Changes & README
+use version; our $VERSION = qv('0.1.2');    # update POD & Changes & README
 
 # update DEPENDENCIES in POD & Makefile.PL & README
 use Scalar::Util qw( weaken );
@@ -15,7 +15,7 @@ use Inferno::RegMgr::Utils qw( run_callback quote attr parse_svc );
 use constant PORT_NEW   => 16675;
 use constant PORT_FIND  => 26675;
 use constant PORT_EVENT => 36675;
-use constant KiB        => 1024;
+use constant KiB        => 1024;    ## no critic (Capitalization)
 
 
 sub new {
@@ -65,7 +65,7 @@ sub _cb_event {
     if ($e & IN && $io->{in_buf} !~ s/.*\n//xms) {
         $e &= ~IN;
         if (length $io->{in_buf} > KiB) {
-            $err = "Bug in registry: got 1 KiB without \\n";
+            $err = 'Bug in registry: got 1 KiB without \\n';
         }
     }
     if ($e & EOF || $err) {
@@ -142,7 +142,7 @@ Inferno::RegMgr::TCP - Access OS Inferno's registry(4) files using TCP ports
 
 =head1 VERSION
 
-This document describes Inferno::RegMgr::TCP version 0.1.0
+This document describes Inferno::RegMgr::TCP version 0.1.2
 
 
 =head1 SYNOPSIS
@@ -244,13 +244,22 @@ objects - to be able to interrupt their task (using $io->close()).
 Example commands to provide access to registry using TCP ports, in a way
 compatible with this module:
 
- listen -A tcp!127.0.0.1!16675 { cat >/mnt/registry/new & }
- listen -A tcp!127.0.0.1!26675 { {
-    read >[1=3]; read -o 0 0 <[0=3]; cat >[1=0] <[0=3]
-    } <>[3]/mnt/registry/find & }
- listen -A tcp!127.0.0.1!36675 { {
-    echo READY; cat
-    } </mnt/registry/event & }
+ #!/dis/sh
+ # (for perl) plain tcp interface to /mnt/registry/{new,find,event}
+ listen -A -s tcp!127.0.0.1!16675 { cat >/mnt/registry/new & } &
+ listen -A -s tcp!127.0.0.1!26675 { {
+     read >[1=3]; read -o 0 0 <[0=3]; cat >[1=0] <[0=3]
+     } <>[3]/mnt/registry/find & } &
+ # 'echo READY' needed to workaround race: between connecting to tcp port
+ # and opening event file may happens some events which will be lost in
+ # case client expect to get ALL events after establishing connection
+ listen -A -s tcp!127.0.0.1!36675 { {
+     echo READY
+     cat &                      pid1 := $apid
+     cat <[0=1] >/dev/null &    pid2 := $apid
+     { read < /prog/$pid2/wait; kill $pid1 >[2]/dev/null } &
+     read < /prog/$pid1/wait; kill $pid2 >[2]/dev/null
+     } </mnt/registry/event & } &
 
 
 =head1 INTERFACE 
