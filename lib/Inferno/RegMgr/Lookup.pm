@@ -39,7 +39,7 @@ sub START {
     return;
 }
 
-sub _cb_find {
+sub _cb_find { ## no critic(ProhibitUnusedPrivateSubroutines)
     my ($self, $svc, $err) = @_;
     if ($svc) {
         $self->{manager}->detach( $self );

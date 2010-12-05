@@ -38,7 +38,7 @@ sub START {
     return;
 }
 
-sub _cb_new {
+sub _cb_new { ## no critic(ProhibitUnusedPrivateSubroutines)
     my ($self, $err) = @_;
     $self->{t} = EV::timer RETRY, 0, sub { $self->START() };
     return;
