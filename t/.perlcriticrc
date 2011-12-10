@@ -1092,6 +1092,9 @@ severity                           = 2
 # maximum_violations_per_document    = no_limit
 
 
+[-ValuesAndExpressions::RequireConstantVersion]
+
+
 # Warns that you might have used single quotes when you really wanted double-quotes.
 [-ValuesAndExpressions::RequireInterpolationOfMetachars]
 # set_themes                         = core cosmetic pbp

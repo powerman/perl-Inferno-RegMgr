@@ -1,5 +1,8 @@
 Revision history for Inferno::RegMgr
 
+0.1.5	Sat Dec 10 09:07:32 EET 2011
+	fix $VERSION for PAUSE compatibility
+
 0.1.4	Sat Dec 10 08:30:39 EET 2011
 	test fix
 
