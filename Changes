@@ -1,5 +1,8 @@
 Revision history for Inferno::RegMgr
 
+0.1.4	Sat Dec 10 08:30:39 EET 2011
+	test fix
+
 0.1.3	Sun Dec 05 22:29:35 EET 2010
 	INCOMPATIBLE CHANGE: default ports changed to avoid possible
 	conflicts with dynamically allocated ports (>32768)

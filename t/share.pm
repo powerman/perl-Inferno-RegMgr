@@ -21,7 +21,7 @@ if (`emu-g -h 2>&1` !~ /Usage/xmsi) {
 my ($inferno_pid, $inferno_fh);
 sub registry_start {
     $inferno_pid = open $inferno_fh, '|-',
-     'EMU=-r/usr/inferno INFERNO_HOME=$(pwd)/t/inferno/ emu-g sh -c "run /lib/sh/profile; reg2tcp"'
+     'EMU=-r/usr/inferno INFERNO_HOME=$(pwd)/t/inferno/ /usr/inferno/Linux/386/bin/emu-g sh -c "run /lib/sh/profile; reg2tcp"'
      or die "open: $!";
     sleep 1;    # WARNING unreliable
 }

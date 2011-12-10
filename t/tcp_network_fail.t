@@ -16,7 +16,7 @@ plan tests => @CheckPoint/2;
 
 registry_start();
 
-my $reg = Inferno::RegMgr::TCP->new({ host => '127.0.0.1' });
+my $reg = Inferno::RegMgr::TCP->new({ host => '127.0.0.172' });
 
 $reg->open_event({
     cb      => \&cb_event,
@@ -33,7 +33,7 @@ sub cb_event {
     &checkpoint;
     if ($e & CONNECTED) {
         $reg->open_new({
-            name    => 'tcp!127.0.0.1!1234',
+            name    => 'tcp!127.0.0.172!1234',
             attr    => {},
             cb      => \&cb_new,
         });

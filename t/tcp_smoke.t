@@ -7,7 +7,7 @@ use Inferno::RegMgr::TCP;
 
 
 my $wait_srv = {
-    'tcp!127.0.0.1!1234'    => {
+    'tcp!127.0.0.172!1234'    => {
         auth    => 'none',
         type    => 'fake\'n service',
     }
@@ -24,7 +24,7 @@ plan tests => @CheckPoint/2+1;
 
 registry_start();
 
-my $reg = Inferno::RegMgr::TCP->new({ host => '127.0.0.1' });
+my $reg = Inferno::RegMgr::TCP->new({ host => '127.0.0.172' });
 ok($reg, 'Inferno::RegMgr::TCP object created');
 
 my %io;
@@ -43,7 +43,7 @@ sub cb_event {
     &checkpoint;
     if ($e & CONNECTED) {
         $io{new} = $reg->open_new({
-            name    => 'tcp!127.0.0.1!1234',
+            name    => 'tcp!127.0.0.172!1234',
             attr  => { auth => 'nane', type => 'fake\'n service' },
             cb      => \&cb_new,
         });

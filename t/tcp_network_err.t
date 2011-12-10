@@ -8,7 +8,7 @@ use Inferno::RegMgr::TCP;
 
 plan tests => 3;
 
-my $reg = Inferno::RegMgr::TCP->new({ host => '127.0.0.1' });
+my $reg = Inferno::RegMgr::TCP->new({ host => '127.0.0.172' });
 
 $reg->open_event({ cb => \&cb_event });
 

@@ -13,13 +13,13 @@ throws_ok { Inferno::RegMgr::TCP->new({})            } qr/{host} required/;
 throws_ok { Inferno::RegMgr::TCP->new({host=>undef}) } qr/{host} required/;
 lives_ok  { Inferno::RegMgr::TCP->new({host=>q{}})   } 'new() accept empty {host}';
 lives_ok  { Inferno::RegMgr::TCP->new({
-            host        => 'localhost',
+            host        => '127.0.0.172',
             port_new    => 1,
             port_find   => 2,
             port_event  => 3,
             }) } 'new() with all params';
 
-my $reg = Inferno::RegMgr::TCP->new({host=>'localhost'});
+my $reg = Inferno::RegMgr::TCP->new({host=>'127.0.0.172'});
 
 throws_ok { $reg->open_event()              } qr/{cb} required/;
 throws_ok { $reg->open_event({})            } qr/{cb} required/;

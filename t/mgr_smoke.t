@@ -22,7 +22,7 @@ plan tests => @CheckPoint/2+1;
 
 registry_start();
 
-my $reg     = Inferno::RegMgr::TCP->new({ host => '127.0.0.1' });
+my $reg     = Inferno::RegMgr::TCP->new({ host => '127.0.0.172' });
 my $regmgr  = Inferno::RegMgr->new( $reg );
 my $srv1    = Inferno::RegMgr::Service->new({ name => 'one' });
 my $srv2    = Inferno::RegMgr::Service->new({ name => 'two' });
