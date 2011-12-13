@@ -4,7 +4,8 @@ use warnings;
 use strict;
 use Carp;
 
-use version 0.77; our $VERSION = version->declare('0.1.3'); # update POD & Changes & README
+# update POD & Changes & README
+use version; our $VERSION = qv('0.1.3');
 
 # update DEPENDENCIES in POD & Makefile.PL & README
 use Scalar::Util qw( weaken );
