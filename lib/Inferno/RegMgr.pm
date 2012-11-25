@@ -5,7 +5,7 @@ use strict;
 use Carp;
 
 # update POD & Changes & README
-use version; our $VERSION = qv('0.1.6');
+use version; our $VERSION = qv('0.1.7');
 
 # update DEPENDENCIES in POD & Makefile.PL & README
 use Scalar::Util qw( weaken refaddr );
@@ -112,7 +112,7 @@ Inferno::RegMgr - Keep connection to OS Inferno's registry(4) and it tasks
 
 =head1 VERSION
 
-This document describes Inferno::RegMgr version 0.1.5
+This document describes Inferno::RegMgr version 0.1.7
 
 
 =head1 SYNOPSIS

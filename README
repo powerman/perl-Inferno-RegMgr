@@ -1,4 +1,4 @@
-Inferno::RegMgr version 0.1.5
+Inferno::RegMgr version 0.1.7
 
 Using OS Inferno registry(4) is simple, but in case connection to registry
 become broken (because of network issues or even registry restart) you
