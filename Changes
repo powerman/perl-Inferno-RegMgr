@@ -1,6 +1,8 @@
 Revision history for Inferno::RegMgr
 
 {{$NEXT}}
+
+v1.0.0  2016-02-16 12:05:04 EET
 	- Switch from Perl6::Export::Attrs to Export::Attrs.
 	- Switch to Dist::Milla.
 

@@ -56,27 +56,27 @@
    "provides" : {
       "Inferno::RegMgr" : {
          "file" : "lib/Inferno/RegMgr.pm",
-         "version" : "v0.1.7"
+         "version" : "v1.0.0"
       },
       "Inferno::RegMgr::Lookup" : {
          "file" : "lib/Inferno/RegMgr/Lookup.pm",
-         "version" : "v0.1.7"
+         "version" : "v1.0.0"
       },
       "Inferno::RegMgr::Monitor" : {
          "file" : "lib/Inferno/RegMgr/Monitor.pm",
-         "version" : "v0.1.7"
+         "version" : "v1.0.0"
       },
       "Inferno::RegMgr::Service" : {
          "file" : "lib/Inferno/RegMgr/Service.pm",
-         "version" : "v0.1.7"
+         "version" : "v1.0.0"
       },
       "Inferno::RegMgr::TCP" : {
          "file" : "lib/Inferno/RegMgr/TCP.pm",
-         "version" : "v0.1.7"
+         "version" : "v1.0.0"
       },
       "Inferno::RegMgr::Utils" : {
          "file" : "lib/Inferno/RegMgr/Utils.pm",
-         "version" : "v0.1.7"
+         "version" : "v1.0.0"
       }
    },
    "release_status" : "stable",
@@ -91,6 +91,6 @@
          "web" : "https://github.com/powerman/perl-Inferno-RegMgr"
       }
    },
-   "version" : "v0.1.7"
+   "version" : "v1.0.0"
 }
 

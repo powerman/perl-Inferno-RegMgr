@@ -5,7 +5,7 @@ use strict;
 use utf8;
 use Carp;
 
-our $VERSION = 'v0.1.7';
+our $VERSION = 'v1.0.0';
 
 use Scalar::Util qw( weaken );
 use IO::Stream;
@@ -144,7 +144,7 @@ Inferno::RegMgr::TCP - Access OS Inferno's registry(4) files using TCP ports
 
 =head1 VERSION
 
-This document describes Inferno::RegMgr::TCP version 0.1.7
+This document describes Inferno::RegMgr::TCP version v1.0.0
 
 
 =head1 SYNOPSIS

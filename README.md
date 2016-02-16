@@ -7,7 +7,7 @@ Inferno::RegMgr - Keep connection to OS Inferno's registry(4) and it tasks
 
 # VERSION
 
-This document describes Inferno::RegMgr version 0.1.7
+This document describes Inferno::RegMgr version v1.0.0
 
 # SYNOPSIS
 

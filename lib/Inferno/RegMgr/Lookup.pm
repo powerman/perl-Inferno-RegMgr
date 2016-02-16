@@ -5,7 +5,7 @@ use strict;
 use utf8;
 use Carp;
 
-our $VERSION = 'v0.1.7';
+our $VERSION = 'v1.0.0';
 
 use Scalar::Util qw( weaken );
 use EV;
@@ -75,7 +75,7 @@ Inferno::RegMgr::Lookup - Search services in OS Inferno's registry(4)
 
 =head1 VERSION
 
-This document describes Inferno::RegMgr::Lookup version 0.1.7
+This document describes Inferno::RegMgr::Lookup version v1.0.0
 
 
 =head1 SYNOPSIS
