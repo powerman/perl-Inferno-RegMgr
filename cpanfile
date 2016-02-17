@@ -13,5 +13,9 @@ on configure => sub {
 on test => sub {
     requires 'Test::Exception';
     requires 'Test::More';
+};
+
+on develop => sub {
+    requires 'Test::Distribution';
     requires 'Test::Perl::Critic';
 };
