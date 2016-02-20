@@ -10,12 +10,6 @@ perl:
   - "5.20"
   - "5.22"
 
-# https://github.com/travis-ci/apt-package-whitelist/issues/1166
-addons:
-  apt:
-    packages:
-      - libadns1-dev
-
 env:
   global:
     - HARNESS_OPTIONS=j1:c
