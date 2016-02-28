@@ -78,36 +78,42 @@ module.
 
 # INTERFACE 
 
-- new( $connection\_plugin )
+## new
 
-    Create new Inferno::RegMgr object, configured to use $connection\_plugin to
-    access registry. (All task plugins attached to this object also will use
-    that connection plugin.)
+    $regmgr = Inferno::RegMgr->new( $connection_plugin );
 
-    If you lose all references to returned Inferno::RegMgr object all attached
-    tasks will be stopped and detached, all memory used by all plugins will be
-    freed (unless you will keep references to some plugins).
+Create new Inferno::RegMgr object, configured to use $connection\_plugin to
+access registry. (All task plugins attached to this object also will use
+that connection plugin.)
 
-    Return Inferno::RegMgr object.
+If you lose all references to returned Inferno::RegMgr object all attached
+tasks will be stopped and detached, all memory used by all plugins will be
+freed (unless you will keep references to some plugins).
 
-- attach( $task\_plugin )
+Return Inferno::RegMgr object.
 
-    Attached plugin will start working as soon as connection to registry will
-    be available. Reference to this plugin will be stored in Inferno::RegMgr
-    object until that plugin will be detach()ed.
+## attach
 
-    You need to keep reference to attached task plugin only if you wanna stop
-    (detach()) it later or if that plugin object provide additional features.
+    $regmgr->attach( $task_plugin );
 
-    Return nothing.
+Attached plugin will start working as soon as connection to registry will
+be available. Reference to this plugin will be stored in Inferno::RegMgr
+object until that plugin will be detach()ed.
 
-- detach( $task\_plugin )
+You need to keep reference to attached task plugin only if you wanna stop
+(detach()) it later or if that plugin object provide additional features.
 
-    Given $task\_plugin should be same as used in attach() method before.
-    It will be stopped and detached (but it still may keep some state, which
-    will may be reused if that plugin will be attach()ed again).
+Return nothing.
 
-    Return nothing.
+## detach
+
+    $regmgr->detach( $task_plugin );
+
+Given $task\_plugin should be same as used in attach() method before.
+It will be stopped and detached (but it still may keep some state, which
+will may be reused if that plugin will be attach()ed again).
+
+Return nothing.
 
 # FOR PLUGIN DEVELOPERS
 
@@ -202,7 +208,7 @@ Alex Efros &lt;powerman@cpan.org>
 
 # COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2009-2010 by Alex Efros &lt;powerman@cpan.org>.
+This software is Copyright (c) 2009- by Alex Efros &lt;powerman@cpan.org>.
 
 This is free software, licensed under:
 

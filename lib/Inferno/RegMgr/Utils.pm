@@ -110,9 +110,9 @@ Internal module for use by other Inferno::RegMgr::*.
 
 =head1 INTERFACE 
 
-=over
+=head2 run_callback
 
-=item run_callback( CB, METHOD, ARGS )
+    run_callback( CB, METHOD, ARGS );
 
 Run callback in Perl6 style (see http://dev.perl.org/perl6/rfc/321.html).
 
@@ -123,18 +123,20 @@ Run callback in Perl6 style (see http://dev.perl.org/perl6/rfc/321.html).
 
 Return: nothing.
 
-=item quote()
+=head2 quote
 
-=item unquote()
+=head2 unquote
 
-=item attr()
+=head2 attr
 
-=item parse_svc()
+=head2 parse_svc
+
+    $quoted     = quote( $unquoted );
+    $unquoted   = unquote( $quoted );
+    $quoted     = attr( \%attr );
+    ($svc_hash, $errmsg) = parse_svc( $svc );
 
 Helpers to process service list used by registry server.
-
-
-=back
 
 
 =head1 DIAGNOSTICS
@@ -209,7 +211,7 @@ Alex Efros E<lt>powerman@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2009-2010 by Alex Efros E<lt>powerman@cpan.orgE<gt>.
+This software is Copyright (c) 2009- by Alex Efros E<lt>powerman@cpan.orgE<gt>.
 
 This is free software, licensed under:
 

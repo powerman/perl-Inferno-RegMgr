@@ -99,9 +99,9 @@ and/or unregister service using detach().
 
 =head1 INTERFACE 
 
-=over
+=head2 new
 
-=item new()
+    $srv = Inferno::RegMgr::Service->new( \%opt );
 
 Create and return Inferno::RegMgr::Service object.
 
@@ -110,17 +110,15 @@ Accept HASHREF with options:
  name       REQUIRED service name
  attr       OPTIONAL hash with service attrs
 
+=head2 update
 
-=item update()
+    $srv->update( \%attr );
 
 Update service attributes.
 
 Accept HASHREF with attributes which should be added/changed.
 
 Return nothing.
-
-
-=back
 
 
 =head1 DIAGNOSTICS
@@ -180,7 +178,7 @@ Alex Efros E<lt>powerman@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2009-2010 by Alex Efros E<lt>powerman@cpan.orgE<gt>.
+This software is Copyright (c) 2009- by Alex Efros E<lt>powerman@cpan.orgE<gt>.
 
 This is free software, licensed under:
 

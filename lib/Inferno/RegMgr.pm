@@ -187,9 +187,9 @@ module.
 
 =head1 INTERFACE 
 
-=over
+=head2 new
 
-=item new( $connection_plugin )
+    $regmgr = Inferno::RegMgr->new( $connection_plugin );
 
 Create new Inferno::RegMgr object, configured to use $connection_plugin to
 access registry. (All task plugins attached to this object also will use
@@ -201,8 +201,9 @@ freed (unless you will keep references to some plugins).
 
 Return Inferno::RegMgr object.
 
+=head2 attach
 
-=item attach( $task_plugin )
+    $regmgr->attach( $task_plugin );
 
 Attached plugin will start working as soon as connection to registry will
 be available. Reference to this plugin will be stored in Inferno::RegMgr
@@ -213,17 +214,15 @@ You need to keep reference to attached task plugin only if you wanna stop
 
 Return nothing.
 
+=head2 detach
 
-=item detach( $task_plugin )
+    $regmgr->detach( $task_plugin );
 
 Given $task_plugin should be same as used in attach() method before.
 It will be stopped and detached (but it still may keep some state, which
 will may be reused if that plugin will be attach()ed again).
 
 Return nothing.
-
-
-=back
 
 
 =head1 FOR PLUGIN DEVELOPERS
@@ -344,7 +343,7 @@ Alex Efros E<lt>powerman@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2009-2010 by Alex Efros E<lt>powerman@cpan.orgE<gt>.
+This software is Copyright (c) 2009- by Alex Efros E<lt>powerman@cpan.orgE<gt>.
 
 This is free software, licensed under:
 

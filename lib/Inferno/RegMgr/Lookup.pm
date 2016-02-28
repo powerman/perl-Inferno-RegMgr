@@ -98,9 +98,9 @@ user callback with search results.
 
 =head1 INTERFACE 
 
-=over
+=head2 new
 
-=item new()
+    $lookup = Inferno::RegMgr::Lookup->new( \%opt );
 
 Create and return Inferno::RegMgr::Lookup object.
 
@@ -121,9 +121,6 @@ parameters (keys in hash are found service names and values are attributes
 of these services):
 
  (\%services)
-
-
-=back
 
 
 =head1 DIAGNOSTICS
@@ -183,7 +180,7 @@ Alex Efros E<lt>powerman@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2009-2010 by Alex Efros E<lt>powerman@cpan.orgE<gt>.
+This software is Copyright (c) 2009- by Alex Efros E<lt>powerman@cpan.orgE<gt>.
 
 This is free software, licensed under:
 

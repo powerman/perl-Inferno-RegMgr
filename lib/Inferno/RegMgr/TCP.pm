@@ -268,9 +268,9 @@ compatible with this module:
 
 =head1 INTERFACE 
 
-=over
+=head2 new
 
-=item new()
+    $reg = Inferno::RegMgr::TCP->new( \%opt );
 
 Create and return Inferno::RegMgr::TCP object.
 
@@ -284,8 +284,9 @@ Accept HASHREF with options:
 This hostname and ports will be used by methods open_new(), open_find()
 and open_event().
 
+=head2 open_new
 
-=item open_new()
+    $io = $reg->open_new( \%opt );
 
 Register new service in registry.
 Create and return IO::Stream object, with connection to {host}:{port_new}.
@@ -309,8 +310,9 @@ method update()) and unregister service (using $io->close()).
 DO NOT FORGET to weaken() returned IO::Stream object if you will keep it
 or to remove it when user callback will be called!
 
+=head2 update
 
-=item update($io, \%attr)
+    $reg->update( $io, \%attr );
 
 Update attrs for registered service.
 
@@ -319,8 +321,9 @@ Update attrs for registered service.
 
 Return nothing.
 
+=head2 open_find
 
-=item open_find()
+    $io = $reg->open_find( \%opt );
 
 Lookup for currently registered services in registry.
 Create and return IO::Stream object, with connection to {host}:{port_find}.
@@ -346,8 +349,9 @@ Returned IO::Stream object can be used to: interrupt this search
 DO NOT FORGET to weaken() returned IO::Stream object if you will keep it
 or to remove it when user callback will be called!
 
+=head2 open_event
 
-=item open_event()
+    $io = $reg->open_event( \%opt );
 
 Get registry change notifications.
 Create and return IO::Stream object, with connection to {host}:{port_event}.
@@ -377,9 +381,6 @@ Returned IO::Stream object can be used to: stop receiving notifications
 
 DO NOT FORGET to weaken() returned IO::Stream object if you will keep it
 or to remove it when user callback will be called on error or EOF!
-
-
-=back
 
 
 =head1 DIAGNOSTICS
@@ -451,7 +452,7 @@ Alex Efros E<lt>powerman@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2009-2010 by Alex Efros E<lt>powerman@cpan.orgE<gt>.
+This software is Copyright (c) 2009- by Alex Efros E<lt>powerman@cpan.orgE<gt>.
 
 This is free software, licensed under:
 

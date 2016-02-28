@@ -130,9 +130,9 @@ to interrupt this monitoring using detach().
 
 =head1 INTERFACE 
 
-=over
+=head2 new
 
-=item new()
+    $mon = Inferno::RegMgr::Monitor->new( \%opt );
 
 Create and return Inferno::RegMgr::Monitor object.
 
@@ -154,9 +154,6 @@ when new service registered (add), existing service will change it attributes
 In all cases user callback will be called with parameters:
 
  ($service_name, \%service_attr)
-
-
-=back
 
 
 =head1 DIAGNOSTICS
@@ -216,7 +213,7 @@ Alex Efros E<lt>powerman@cpan.orgE<gt>
 
 =head1 COPYRIGHT AND LICENSE
 
-This software is Copyright (c) 2009-2010 by Alex Efros E<lt>powerman@cpan.orgE<gt>.
+This software is Copyright (c) 2009- by Alex Efros E<lt>powerman@cpan.orgE<gt>.
 
 This is free software, licensed under:
 
