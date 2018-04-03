@@ -1,7 +1,8 @@
 # TODO иногда приходит "лишний" event/IN с текстом 000001 (обычно первый
 # приходящий это 000002)
 # http://code.google.com/p/inferno-os/issues/detail?id=179
-use t::share;
+use lib 't';
+use share;
 
 use Inferno::RegMgr::TCP;
 

@@ -1,4 +1,5 @@
-use t::share;
+use lib 't';
+use share;
 
 use Inferno::RegMgr;
 use Inferno::RegMgr::TCP;
